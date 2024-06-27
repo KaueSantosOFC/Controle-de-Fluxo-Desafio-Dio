@@ -12,16 +12,16 @@ public class Contador {
             //chamando o método contendo a lógica de contagem
             contar(parametroUm, parametroDois);
 
-        }catch (ParametrosInvalidosException exception) {
+        }catch (ParametrosInvalidosException e) {
             //imprimir a mensagem: O segundo parâmetro deve ser maior que o primeiro
-            ParametrosInvalidosException.mensagem();
+            e.mensagem();
         }
 
     }
     static void contar(int parametroUm, int parametroDois ) throws ParametrosInvalidosException {
         //validar se parametroUm é MAIOR que parametroDois e lançar a exceção
         if (parametroUm > parametroDois) {
-            ParametrosInvalidosException.mensagem();
+            throw new ParametrosInvalidosException();
         }
 
         int contagem = parametroDois - parametroUm;
